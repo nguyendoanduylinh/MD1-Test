@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cau 3</title>
+  </head>
+  <body>
+    <script>
+      let stringInput = prompt("Nhập chuỗi ký tự: ");
+      const vowel = ["a", "i", "u", "e", "o"];
+
+      function findVowel(stringInput) {
+        let count = 0;
+        let stringSplitted = stringInput.split("");
+        for (let j = 0; j < stringSplitted.length; j++) {
+          for (let i = 0; i < vowel.length; i++) {
+            if (stringSplitted[j] == vowel[i]) {
+              document.write(
+                `<div>Chuỗi bạn vừa nhập [${stringInput}] có ký tự ${
+                  stringSplitted[j]
+                } là nguyên âm tại vị trí số ${j + 1}<div>`
+              );
+              count++;
+            }
+          }
+        }
+        if (count === 0) {
+          return false;
+        } else {
+          return count;
+        }
+      }
+      console.log(findVowel(stringInput));
+    </script>
+  </body>
+</html>
